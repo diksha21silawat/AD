@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>LIBRARY MANAGMENT</title>
+      <style>
+          @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,400;1,700&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    text-decoration:none;
+    list-style:none;
+    font-family:'Josefin Sans';
+}
+body{
+    width:100%;
+    height:100vh;
+    background:#eee;
+}
+.app{
+    width:100%;
+    height:100vh;
+    overflow:hidden;
+}
+.app h1{
+    text-align:center;
+    margin-top:-200px;
+    z-index:1;
+}
+.app .nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:8px 12px;
+    background:#7A9FEF;
+    box-shadow:0 5px 5px rgba(0,0,0,0.1);
+    z-index:1;
+}
+.nav .btn{
+    width:40px;
+    padding:0 5px;
+}
+.btn .bar{
+    width:100%;
+    height:3px;
+    background:#fff;
+    border-radius:2px;
+    transition:0.3s ease-in;
+}
+.btn .bar2{
+    margin:5px 0;
+}
+.btn.act .bar1{
+    transform:rotate(40deg) translateY(6px) translateX(5px);
+}
+.btn.act .bar2{
+    opacity:0;
+}
+.btn.act .bar3{
+    transform:rotate(-40deg) translateY(-6px) translateX(5px);
+}
+.nav .user{
+    width:30px;
+    height:30px;
+    border:2px solid #fff;
+    border-radius:50%;
+    overflow:hidden;
+    position:relative;
+}
+.nav .user:before{
+    position:absolute;
+    content:'';
+    top:0;
+    left:50%;
+    width:10px;
+    height:10px;
+    transform:translate(-50%,40%);
+    background:#fff;
+    border-radius:50%;
+}
+.nav .user:after{
+    position:absolute;
+    content:'';
+    bottom:10%;
+    left:50%;
+    width:100%;
+    height:14px;
+    transform:translate(-50%,50%);
+    background:#fff;
+    border-radius:15px 15px 0 0;
+}
+.app .sidebar{
+    width:230px;
+    height:91%;
+    margin-left:-100%;
+    padding:5px 10px;
+    background:#fff;
+    box-shadow:5px 0 5px rgba(0,0,0,0.1);
+    z-index:5;
+    transition:0.3s ease-in;
+}
+.sidebar.ac{
+    margin-left:0;
+}
+.sidebar h3{
+    padding:10px;
+    padding-bottom:30px;
+}
+.sidebar ul li a{
+    display:block;
+    width:100%;
+    height:100%;
+    padding:10px;
+    margin:1px 0;
+    color:#333439;
+    background:#F5F8FB;
+    text-transform:uppercase;
+    text-shadow:1px 1px 2px rgba(0,0,0,0.1);
+}
+.app .profile{
+    position:fixed;
+    content:'';
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:260px;
+    height:380px;
+    background:#fff;
+    border-radius:5px;
+    box-shadow:0 0 20px rgba(0,0,0,0.2);
+    text-align:center ;
+    overflow:hidden;
+    z-index:10;
+    display:none;
+}
+.profile .icon{
+    width:100px;
+    height:100px;
+    border:5px solid #333439;
+    border-radius:50%;
+    margin:15% auto;
+    margin-bottom:5%;
+    position:relative;
+    overflow:hidden;
+}
+.profile .icon:before{
+    position:absolute;
+    content:'';
+    top:1%;
+    left:50%;
+    transform:translate(-50%,20%);
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    background:#333439;
+}
+.profile .icon:after{
+    position:absolute;
+    content:'';
+    bottom:0;
+    left:0;
+    width:100%;
+    height:35px;
+    border-radius:30px 30px 0 0;
+    background:#333439;
+}
+.profile .link{
+    width:80%;
+    margin:0 auto;
+    padding:15px 0;
+    display:flex;
+    justify-content:space-between;
+}
+.profile h2{
+    padding-bottom:10px;
+}
+.profile .link a{
+    display:block;
+    width:100px;
+    height:100%;
+    font-size:14px;
+    padding:6px 10px;
+    color:#7A9FEF;
+    border:1px solid #7A9FEF;
+    border-radius:2px;
+    font-weight:600;
+}
+.profile .link a:hover{
+    background:#7A9FEF;
+    color:#fff;
+    transition:0.5s;
+}
+.profile .wrap{
+    width:80%;
+    margin:5% auto;
+    display:flex;
+    justify-content:space-between;
+}
+.profile .wrap div{
+    padding:12px 10px;
+    border:2px solid #7A9FEF;
+    border-radius:3px;
+}
+      </style>
+  </head>
+  <body>
+   <div class="app">
+
+    <nav class="nav">
+      <div class="user"></div>
+       AD Library Managment
+      <div class="btn">
+        <div class="bar bar1"></div>
+        <div class="bar bar2"></div>
+        <div class="bar bar3"></div>
+      </div>
+    </nav>
+    <div class="sidebar">
+      <h3>Kabir Arya</h3>
+      <ul>
+        <li><a href="#"><button type="button" class="btn btn-primary">
+  Web Develpment <span class="badge bg-secondary">4</span>
+</button></a></li>
+        <li><a href="#"><button type="button" class="btn btn-primary">
+  Python <span class="badge bg-secondary">2</span>
+</button></a></li>
+        <li><a href="#"><button type="button" class="btn btn-primary">
+  Go <span class="badge bg-secondary">1</span>
+</button></a></li>
+        <li><a href="#"><button type="button" class="btn btn-primary">
+  C++ <span class="badge bg-secondary">30</span>
+</button></a></li>
+        <li><a href="#"><button type="button" class="btn btn-primary">
+  Java <span class="badge bg-secondary">50</span>
+</button></a></li>
+        <li><a href="#"><button type="button" class="btn btn-primary">
+  GUI{Graphical User Interface} <span class="badge bg-secondary">4</span>
+</button></a></li>
+      </ul>
+    </div>
+    <div class="profile">
+      <div class="icon">
+      </div>
+      <h2>Kabir Arya</h2>
+      <p>
+        Front-End Developer & Back End Devloper
+      </p>
+      <div class="link">
+        <a href="https://www.sololearn.com/Profile/18059019/?ref=app">Follow me</a>
+        <a href="https://www.instagram.com/kabir_arya001">Contact me</a>
+      </div>
+      <div class="wrap">
+        <div>
+          <h2>+183</h2>
+          <p>
+            Followers
+          </p>
+        </div>
+        <div>
+          <h2>+20</h2>
+          <p>
+            Following
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(".btn").click(()=> {
+      $(".btn").toggleClass("act");
+      $(".sidebar").toggleClass("ac")
+    });
+    $(".user").click(()=> {
+      $(".profile").slideToggle(300)
+    })
+  </script>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
