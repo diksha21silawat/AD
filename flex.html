@@ -27,7 +27,7 @@ body{
 .app{
     width:100%;
     height:100vh;
-    overflow:hidden;
+
 }
 .app h1{
     text-align:center;
@@ -208,12 +208,69 @@ body{
     border:2px solid #7A9FEF;
     border-radius:3px;
 }
+
+.container{
+    width:100%;
+    padding:10px;
+    display:flex;
+    flex-wrap:wrap;
+}
+.container .box{
+    width:300px;
+    height:350px;
+    margin-top:-500px;
+    margin-left:490px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:black;
+}
+.container-ayush{
+    width:100%;
+    padding:10px;
+    display:flex;
+    flex-wrap:wrap;
+}
+.container-ayush .box-ayush{
+    width:300px;
+    height:310px;
+    margin-top:-500px;
+    margin-left:250px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:black;
+}
+.container-ayush2{
+    width:100%;
+    padding:10px;
+    display:flex;
+    flex-wrap:wrap;
+}
+.container-ayush2 .box-ayush2{
+    width:300px;
+    height:270px;
+    margin-top:-500px;
+    margin-left:855px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:black;
+}
+
+
+
       </style>
   </head>
   <body>
+
    <div class="app">
 
     <nav class="nav">
+
       <div class="user"></div>
        AD Library Managment
       <div class="btn">
@@ -222,6 +279,7 @@ body{
         <div class="bar bar3"></div>
       </div>
     </nav>
+
     <div class="sidebar">
       <h3>Kabir Arya</h3>
       <ul>
@@ -244,34 +302,51 @@ body{
   GUI{Graphical User Interface} <span class="badge bg-secondary">4</span>
 </button></a></li>
       </ul>
-    </div>
-    <div class="profile">
-      <div class="icon">
-      </div>
-      <h2>Kabir Arya</h2>
-      <p>
-        Front-End Developer & Back End Devloper
-      </p>
-      <div class="link">
-        <a href="https://www.sololearn.com/Profile/18059019/?ref=app">Follow me</a>
-        <a href="https://www.instagram.com/kabir_arya001">Contact me</a>
-      </div>
-      <div class="wrap">
-        <div>
-          <h2>+183</h2>
-          <p>
-            Followers
-          </p>
-        </div>
-        <div>
-          <h2>+20</h2>
-          <p>
-            Following
-          </p>
-        </div>
-      </div>
-    </div>
+    </div><div class="container">
+            <div class="box">
+                <div class="card" style="width: 18rem;">
+  <img src="https://uploads.sarvgyan.com/2014/06/cse-image.jpg" class="card-img-top" alt="CSE">
+  <div class="card-body">
+    <h5 class="card-title">CSE</h5>
+    <p class="card-text">Computer Science Engineering (CSE) is an engineering discipline ....</p>
+    <a href="#" class="btn btn-primary">Click Here</a>
   </div>
+</div>
+            </div>
+
+   </div><div class="container-ayush">
+            <div class="box-ayush">
+                <div class="card" style="width: 18rem;">
+  <img src="https://uploads.sarvgyan.com/2014/06/cse-image.jpg" class="card-img-top" alt="CSE">
+  <div class="card-body">
+    <h5 class="card-title">CSE</h5>
+    <p class="card-text">Computer Science Engineering (CSE) is an engineering discipline ....</p>
+    <a href="#" class="btn btn-primary">Click Here</a>
+  </div>
+</div>
+            </div>
+   </div>
+
+
+       <div class="container-ayush2">
+            <div class="box-ayush2">
+                <div class="card" style="width: 18rem;">
+  <img src="https://uploads.sarvgyan.com/2014/06/cse-image.jpg" class="card-img-top" alt="CSE">
+  <div class="card-body">
+    <h5 class="card-title">CSE</h5>
+    <p class="card-text">Computer Science Engineering (CSE) is an engineering discipline ....</p>
+    <a href="#" class="btn btn-primary">Click Here</a>
+  </div>
+</div>
+            </div>
+   </div>
+
+         </div>
+
+    </div>
+
+  </div>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script>
     $(".btn").click(()=> {
